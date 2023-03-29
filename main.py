@@ -64,6 +64,17 @@ def cleanup():
         os.remove("./split/"+i)
 
 
+def create_directories():
+    os.makedirs("./input")
+    os.makedirs("./output")
+    os.makedirs("./split")
+    os.makedirs("./images")
+
+
+if not os.path.exists("./input"):
+    create_directories()
+    quit()
+
 name = pdf_to_images()
 images = get_files()
 process_files(images)
